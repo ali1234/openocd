@@ -493,6 +493,7 @@ void command_print_sameline(struct command_invocation *cmd, const char *format, 
 		 *
 		 * The latter bit isn't precisely neat, but will do for now.
 		 */
+		LOG_USER_N("%s", string);
 		Jim_AppendString(cmd->ctx->interp, cmd->output, string, -1);
 		/* We already printed it above
 		 * command_output_text(context, string); */
@@ -518,6 +519,7 @@ void command_print(struct command_invocation *cmd, const char *format, ...)
 		 *
 		 * The latter bit isn't precisely neat, but will do for now.
 		 */
+		LOG_USER_N("%s", string);
 		Jim_AppendString(cmd->ctx->interp, cmd->output, string, -1);
 		/* We already printed it above
 		 * command_output_text(context, string); */
